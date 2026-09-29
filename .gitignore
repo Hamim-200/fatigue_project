@@ -1,0 +1,6 @@
+data/
+papers/
+.ipynb_checkpoints/
+__pycache__/
+.env
+*.zip
