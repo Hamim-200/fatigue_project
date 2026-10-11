@@ -72,12 +72,12 @@ This is a **classification problem**.
 4. We test the models on people they have never seen.
 
 
-## 8. Research Questions
+## 7. Research Questions
 
 - **RQ1:** How accurately can cognitive fatigue be detected using only timing-based keystroke and mouse features?
 - **RQ2:** How much does accuracy drop when privacy protections are applied (removing content, adding noise, or reducing features)?
 
-## 9. Project Pipeline
+## 8. Project Pipeline
 
 1. Volunteers perform tasks
 2. Logger records timing only (no key identity)
@@ -88,7 +88,7 @@ This is a **classification problem**.
 7. Privacy experiment (add noise or remove features, then re-evaluate)
 
 
-## 12. Glossary
+## 9. Glossary
 
 | Term | Plain-language definition |
 | --- | --- |
@@ -106,3 +106,6 @@ This is a **classification problem**.
 | Federated learning | Training models on devices without moving raw data |
 | Informed consent | A participant's documented permission after understanding what is collected |
 
+## 10. Summary
+
+This project aims to detect cognitive fatigue by analyzing how people type on a keyboard and move a mouse, without recording the actual text they enter. It uses timing-based keystroke features, such as key hold duration and typing pauses, along with mouse features, such as cursor speed, movement stability, and click delay. Machine learning models will analyze these patterns to classify a person's state as alert or fatigued. Participants' self-reported fatigue ratings and reaction-time tests will help evaluate the model's predictions. The project will also investigate privacy-preserving techniques, including removing raw data, adding noise to features, and federated learning. Ultimately, the goal is to develop a reliable, privacy-conscious approach to cognitive fatigue detection that could support students, programmers, office workers, and other people engaged in prolonged mental activities.
