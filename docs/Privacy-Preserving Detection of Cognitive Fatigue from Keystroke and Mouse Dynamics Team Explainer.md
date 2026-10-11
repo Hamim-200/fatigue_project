@@ -1,7 +1,5 @@
 # Privacy-Preserving Detection of Cognitive Fatigue from Keystroke and Mouse Dynamics
 
-*Team Explainer: A Directed Research Pilot Study (CSE)*
-
 ## 1. Overview
 
 This project studies whether a person's **mental fatigue** can be detected from **how** they use a keyboard and mouse, without ever recording **what** they type. Because only timing and movement data are collected, the approach protects the user's privacy.
@@ -16,20 +14,11 @@ This project studies whether a person's **mental fatigue** can be detected from 
 | Keystroke Dynamics | The timing patterns of how a person types |
 | Mouse Dynamics | The movement patterns of how a person uses the mouse |
 
-**Full meaning:** Detecting a person's mental fatigue from the way they type and move the mouse, while keeping their personal content private.
+Basically Detecting a person's mental fatigue from the way they type and move the mouse, while keeping their personal content private.
 
 ## 2. What Is Cognitive Fatigue?
 
-Physical fatigue is muscle tiredness after exercise. **Cognitive fatigue** is the decline in thinking ability after long periods of mental work: attention drops, reaction slows, and small mistakes increase.
-
-**Example:** After four straight hours of studying, you reread the same line several times and cannot concentrate.
-
-**Why it matters:**
-
-- Students: lower learning quality
-- Programmers: more bugs
-- Drivers and operators: higher accident risk
-- Office workers: reduced productivity
+Cognitive fatigue is a state of mental tiredness that occurs after long periods of concentration or mental effort. Unlike physical fatigue, which affects the muscles, cognitive fatigue reduces our ability to think clearly, maintain attention, and react quickly. For example, after studying for four consecutive hours, a student may struggle to concentrate, repeatedly read the same line, or make simple mistakes. Cognitive fatigue can negatively affect students' learning, programmers' coding accuracy, drivers' reaction times, and office workers' productivity.
 
 ## 3. What Is Keystroke Dynamics?
 
@@ -53,7 +42,6 @@ It is about **how** you type, not **what** you type.
 | Idle time | Periods with no movement | May increase |
 | Path straightness | How directly the cursor moves from A to B | May decrease |
 
-**Note:** The words "may" and "possible" are deliberate. These are **hypotheses**. The purpose of the project is to test whether they hold true.
 
 ## 5. What Does Privacy-Preserving Mean Here?
 
@@ -66,13 +54,8 @@ If someone records which keys you press, they can capture passwords, messages, a
 | Mouse speed and movement | Screen content |
 | Anonymous IDs (P01, P02, ...) | Names, emails, photos |
 
-**Example:** If a participant types "hello", our data looks like: key held 120 ms, then 80 ms gap, key held 110 ms, and so on. The letters h-e-l-l-o appear nowhere.
-
-**Optional additional techniques:**
-
-- Adding small amounts of noise to features (a differential privacy idea)
-- Discarding raw data and keeping only summary features
-- Federated learning: training models on the device without sending raw data to a central server
+For example, when a participant types the word "hello," the system records typing patterns such as how long each key is held (120 ms, 110 ms) and the time gaps between keystrokes (80 ms). Instead of storing the actual letters, it collects only timing information to analyze typing behavior while protecting the user's privacy.
+Additional techniques can further improve privacy. Small amounts of noise can be added to the collected features using differential privacy principles. Raw data can be discarded after extracting useful summary features, reducing the risk of exposing sensitive information. Another approach is federated learning, where models are trained directly on users' devices without sending their raw data to a central server.
 
 ## 6. How Does Detection Work?
 
@@ -88,10 +71,6 @@ This is a **classification problem**.
 3. Machine learning models learn which timing patterns correspond to which fatigue level.
 4. We test the models on people they have never seen.
 
-## 7. Key Terms: Passive and Pilot
-
-- **Passive:** Users do not have to do anything extra. They work normally while data is gathered in the background.
-- **Pilot study:** A small preliminary study that checks feasibility and guides a larger future study.
 
 ## 8. Research Questions
 
@@ -108,30 +87,6 @@ This is a **classification problem**.
 6. Evaluation (accuracy, F1-score, ROC-AUC)
 7. Privacy experiment (add noise or remove features, then re-evaluate)
 
-## 10. Methodology in Detail
-
-**Literature review:** 15-20 papers on keystroke dynamics, mouse dynamics, fatigue detection, and privacy-preserving machine learning.
-
-**Data collection:** 15-30 volunteers, 30-45 minute sessions with tasks such as typing, reading with questions, simple arithmetic, and click tasks. Sessions at different times of day (for example morning vs. late night) help create variation in fatigue.
-
-**Labeling:** A short fatigue rating (such as the Karolinska Sleepiness Scale) roughly every 10 minutes, plus a Psychomotor Vigilance Task (PVT) reaction-time test.
-
-**Evaluation:** **Leave-one-subject-out cross-validation**. Train on all participants except one, test on the left-out person, and repeat. This shows whether the model works on new people and prevents overly optimistic results.
-
-**Tools:** Python (scikit-learn, XGBoost, PyTorch, pandas), a JavaScript web page or `pynput` for logging, Google Colab, GitHub, Zotero.
-
-
-## 11. Questions Your Team Might Ask
-
-**Fatigue differs from person to person. How can a model learn it?** We use leave-one-subject-out validation: train without one person, then test on that person. This shows whether the model generalizes to new people.
-
-**How do we know someone is truly fatigued?** We use a self-report scale and a reaction-time test (PVT). Neither is perfect, so we will state this as a limitation.
-
-**Can 20-30 people prove anything?** No, not firmly. That is why this is a pilot study. The aim is to test feasibility and lay groundwork for larger research.
-
-**Isn't this surveillance?** The risk is real, so we (1) obtain informed consent, (2) never record content, (3) use anonymous IDs, and (4) allow participants to withdraw at any time.
-
-**What about different keyboards, mice, and laptops?** This is a confounding variable. We will record device type and, where possible, have everyone use the same web-based task setup.
 
 ## 12. Glossary
 
