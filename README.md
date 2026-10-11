@@ -1,5 +1,3 @@
-# Privacy-Preserving AI Framework for Early Cognitive Fatigue Detection
-
-Detecting cognitive fatigue from passive keyboard and mouse behavior.
+# Privacy-Preserving Detection of Cognitive Fatigue from Keystroke and Mouse Dynamics
 
 - Status: Week 1 - setup and data exploration.
